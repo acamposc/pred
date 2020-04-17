@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: model
+    description: tls count of unique users
+    columns:
+      - name: date
+        tests:
+          - not_null
+      
+      - name: centre
+        tests:
+          - accepted_values:
+              values: ['tls', 'ucal']
