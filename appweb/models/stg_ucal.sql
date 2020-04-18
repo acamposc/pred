@@ -1,11 +1,11 @@
 select
     'ucal' as centre,
-    count(distinct(user_pseudo_id)) as users,
-    event_date as date
+    {{ stg_select() }}
 from
-    `ucal-260417.analytics_217882625.events_*`
+    `ucal-260417.analytics_217882625.events_*`,
+    {{ event_params() }}
 where {{ date_range() }}
 group by
-    centre, date
+   {{ group_by() }}
 order by
-    date asc
+    {{ order_by() }}

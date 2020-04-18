@@ -24,6 +24,6 @@ model as (
         --users as users
     from ucal
     group by 
-        1,2,3
+        1,2,3,4,5
 )
 select * from model

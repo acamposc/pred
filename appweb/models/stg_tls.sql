@@ -1,11 +1,11 @@
 select 
     'tls' as centre,
-    count(distinct(user_pseudo_id)) as users,
-    event_date as date
+    {{ stg_select() }}
 from 
-    `toulouse-261516.analytics_217882356.events_*`
+    `toulouse-261516.analytics_217882356.events_*`,
+    {{ event_params() }}
 where {{ date_range() }}
 group by
-    centre, date
+   {{ group_by() }}
 order by
-    date asc
+    {{ order_by() }}
