@@ -13,4 +13,4 @@
 
 #create or replace bigquery views.
 cd appweb
-dbt run --vars '{"date_begin":"20200401", "date_end":"20200404"}
+dbt run --vars '{"date_begin":"20200415", "date_end":"20200415"}'

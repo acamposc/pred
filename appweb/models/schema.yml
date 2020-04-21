@@ -1,14 +1,14 @@
 version: 2
 
 models:
-  - name: model
+  - name: aw_query
     description: tls count of unique users
     columns:
-      - name: date
+      - name: user_pseudo_id
         tests:
           - not_null
       
       - name: centre
         tests:
           - accepted_values:
-              values: ['tls', 'ucal']
+              values: ['tls']
